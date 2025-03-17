@@ -7,7 +7,13 @@
   
   <!-- קישור ל-manifest -->
   <link rel="manifest" href="manifest.json">
-  <!-- קישור ל-favicon – משתמשים בתמונה שסיפקת -->
+  
+  <!-- תגיות למכשירי iOS -->
+  <link rel="apple-touch-icon" href="https://i.imgur.com/GaYFAp1.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- קישור ל-favicon -->
   <link rel="icon" href="https://i.imgur.com/GaYFAp1.png" type="image/png">
   
   <!-- ספריות וסקריפטים -->
@@ -599,7 +605,7 @@
         setDefaultEndTime();
         if (selectedTemplate) {
           document.getElementById("modalSubject").value = selectedTemplate.subject;
-          if(selectedTemplate.description) {
+          if (selectedTemplate.description) {
             document.getElementById("modalDescription").value = selectedTemplate.description;
           }
         }
@@ -1051,16 +1057,14 @@
       alert("תבנית לוז קבוע נשמרה!");
     }
     
-    // עדכון התנהגות התפריט הראשי בעת גלילה – בדיקת כיוון גלילה
+    // עדכון התנהגות התפריט הראשי בעת גלילה – בדיקת כיוון הגלילה
     let lastScrollTop = 0;
     window.addEventListener("scroll", function() {
       const nav = document.querySelector(".topbar");
       let st = window.pageYOffset || document.documentElement.scrollTop;
       if (st > lastScrollTop && st > 50) {
-        // גולשים מטה – מסתירים את התפריט
         nav.style.transform = "translateY(-100%)";
       } else {
-        // גולשים מעלה – מציגים את התפריט
         nav.style.transform = "translateY(0)";
       }
       lastScrollTop = st <= 0 ? 0 : st;
