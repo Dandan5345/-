@@ -7,6 +7,8 @@
   
   <!-- קישור ל-manifest -->
   <link rel="manifest" href="manifest.json">
+  <!-- קישור ל-favicon – משתמשים בתמונה שסיפקת -->
+  <link rel="icon" href="https://i.imgur.com/GaYFAp1.png" type="image/png">
   
   <!-- ספריות וסקריפטים -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -505,9 +507,73 @@
     }
     
     function loadHowToUse(event) {
-      event.preventDefault();
-      document.getElementById("content").innerHTML = '<h2>איך משתמשים</h2><p>כאן תמצא הסברים והדרכות לשימוש באתר.</p>';
-    }
+  event.preventDefault();
+  document.getElementById("content").innerHTML = `
+    <h2 style="margin-bottom: 20px;">איך משתמשים באתר "זמן זהב"?</h2>
+    <div style="max-width: 700px; margin: 0 auto; text-align: right; line-height: 1.6;">
+      <p>
+        אתר "זמן זהב" תוכנן כדי לסייע לכולנו – סטודנטים, עובדים, הורים, וכל מי שרוצה – 
+        ליצור ולנהל לוחות זמנים (לו"ז) בצורה קלה, מהירה וגמישה. בכל פעם שתרצו לתכנן יום לימודים, 
+        שבוע בעבודה או אפילו חופשה משפחתית, האתר יספק לכם כלים נוחים לתכנון ומעקב.
+      </p>
+
+      <h3 style="margin-top: 20px;">כיצד מתחילים?</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;">
+          <strong>1. "לו״ז חדש":</strong> לחצו על הכפתור <em>לו״ז חדש</em> בתפריט העליון. תגיעו להסבר קצר ומשם 
+          תוכלו לעבור ל<b>בניית לוז</b> חדש.
+        </li>
+        <li style="margin-bottom: 10px;">
+          <strong>2. יצירת חלק בלו"ז:</strong> בתוך מסך בניית הלו"ז, לחצו על הסמל <b>(+)</b> להוספת חלק. בחרו 
+          שעת התחלה, שעת סיום ונושא (כמו "קריאה מהירה", "טיול", "ישיבת עבודה"). ניתן להוסיף 
+          נושאים חדשים או להשתמש בנושאים קיימים, ואף לשמור אותם כקבועים לשימוש חוזר.
+        </li>
+        <li style="margin-bottom: 10px;">
+          <strong>3. תיאור פעילות:</strong> לכל חלק אפשר לצרף כמה מילים בתיאור (למשל, מה בדיוק עושים, מטרות, 
+          ציוד שצריך, וכדומה).
+        </li>
+        <li style="margin-bottom: 10px;">
+          <strong>4. תבניות קבועות:</strong> אם אתם מתכננים פעילות שחוזרת על עצמה (למשל "למידה עמוקה 90 דקות") 
+          ניתן ללחוץ על שלוש הנקודות <em>(⋮)</em> במסך בניית הלוז, לבחור "צור לוז קבוע", ולהגדיר תבנית 
+          שתוכלו לשלב שוב ושוב בקלות.
+        </li>
+        <li style="margin-bottom: 10px;">
+          <strong>5. שמירה וסיום:</strong> אחרי שהוספתם את כל החלקים, לחצו על כפתור <b>"שומר וסיים לו״ז"</b> 
+          ותוכלו לראות את הלוז הסופי שלכם. שם תוכלו לצלם מסך של הלוז (לשיתוף חברים, למשל) 
+          או להעתיק את הטקסט המלא ישירות להודעה/מייל.
+        </li>
+        <li style="margin-bottom: 10px;">
+          <strong>6. הלוזי״ם שלי:</strong> בלשונית <b>"הלוזי״ם שלי"</b> תוכלו למצוא את כל הלוזים ששמרתם. כל לוז 
+          ניתן לפתוח שוב, לערוך, או למחוק. כך תוכלו לחזור ולשפר תכניות שהכנתם מראש.
+        </li>
+      </ul>
+
+      <h3 style="margin-top: 20px;">טיפים לשימוש יעיל</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 8px;">
+          <b>• הקלו על עצמכם עם נושאים קבועים:</b> אם יש פעילות שחוזרת על עצמה לעיתים קרובות 
+          (כמו "ניקיון שבועי", "שיעור זום", "ריצה בבוקר"), שמרו אותה כנושא קבוע כדי לחסוך זמן בהמשך.
+        </li>
+        <li style="margin-bottom: 8px;">
+          <b>• היו יצירתיים:</b> אפשר להוסיף סמיילים ותיאורים צבעוניים לכל פעילות, 
+          מה שהופך את הלוז למהנה וברור יותר.
+        </li>
+        <li style="margin-bottom: 8px;">
+          <b>• שתפו אחרים:</b> אחרי שבניתם לוז, תוכלו לשתף אותו בקלות בעזרת העתקה להודעה, או לשלוח צילומי מסך. 
+          כך כל מי שמעורב בעניין ידע מה קורה ומתי.
+        </li>
+        <li style="margin-bottom: 8px;">
+          <b>• נסו גם לתכנן חופשות!</b> אתם יכולים להוסיף חלקים בלוז המותאמים לחופשה, 
+          כמו "נסיעה", "ביקור באטרקציה" או "הפסקת צהריים בים". כל דבר, בכל זמן.
+        </li>
+      </ul>
+
+      <p style="margin-top: 20px;">
+        מקווים שהאתר יהפוך את התכנון שלכם ליעיל וכיפי יותר. שיהיה המון זמן זהב!
+      </p>
+    </div>
+  `;
+}
     
     function addOneMinute(timeStr) {
       let [h, m] = timeStr.split(":").map(Number);
@@ -984,16 +1050,6 @@
       updateTemplateList();
       alert("תבנית לוז קבוע נשמרה!");
     }
-    
-    // הוספת אירוע גלילה לתפריט הראשי
-    window.addEventListener("scroll", function() {
-      const nav = document.querySelector(".topbar");
-      if (window.scrollY > 50) {
-        nav.style.transform = "translateY(-100%)";
-      } else {
-        nav.style.transform = "translateY(0)";
-      }
-    });
   </script>
 </body>
 </html>
