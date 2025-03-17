@@ -1050,6 +1050,21 @@
       updateTemplateList();
       alert("תבנית לוז קבוע נשמרה!");
     }
+    
+    // עדכון התנהגות התפריט הראשי בעת גלילה – בדיקת כיוון גלילה
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", function() {
+      const nav = document.querySelector(".topbar");
+      let st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop && st > 50) {
+        // גולשים מטה – מסתירים את התפריט
+        nav.style.transform = "translateY(-100%)";
+      } else {
+        // גולשים מעלה – מציגים את התפריט
+        nav.style.transform = "translateY(0)";
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    });
   </script>
 </body>
 </html>
