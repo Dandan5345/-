@@ -326,7 +326,7 @@
     </div>
   </div>
 
-  <!-- קוד JavaScript לניהול הלוזים, התחברות, עריכה, שמירה וכדומה -->
+  <!-- קוד JavaScript לניהול הלוזים, התחברות, עריכה ושמירה -->
   <script>
     // משתנים גלובליים לניהול לוזים
     let scheduleItems = [];
@@ -346,22 +346,15 @@
     function login() {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider)
-        .then((result) => {
-          updateUserGreeting(result.user);
-        })
-        .catch((error) => {
-          alert("שגיאה בהתחברות: " + error.message);
-        });
+        .then((result) => { updateUserGreeting(result.user); })
+        .catch((error) => { alert("שגיאה בהתחברות: " + error.message); });
     }
     
     function updateUserGreeting(user) {
       let currentHour = new Date().getHours();
       let greeting = "בוקר טוב";
-      if (currentHour >= 12 && currentHour < 18) {
-        greeting = "צהריים טובים";
-      } else if (currentHour >= 18) {
-        greeting = "ערב טוב";
-      }
+      if (currentHour >= 12 && currentHour < 18) { greeting = "צהריים טובים"; }
+      else if (currentHour >= 18) { greeting = "ערב טוב"; }
       const authLink = document.getElementById("authLink");
       let firstName = user.displayName ? user.displayName.split(" ")[0] : user.email;
       authLink.innerText = greeting + "\n" + firstName + "!";
@@ -937,8 +930,6 @@
       }
     }
     
-    // ניתן להוסיף כאן גם את הקוד לניהול תבניות קבועות (constant templates) לפי הצורך.
-    
     function toggleTemplateDropdown() {
       const dropdown = document.getElementById("templateDropdown");
       dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
@@ -993,6 +984,16 @@
       updateTemplateList();
       alert("תבנית לוז קבוע נשמרה!");
     }
+    
+    // הוספת אירוע גלילה לתפריט הראשי
+    window.addEventListener("scroll", function() {
+      const nav = document.querySelector(".topbar");
+      if (window.scrollY > 50) {
+        nav.style.transform = "translateY(-100%)";
+      } else {
+        nav.style.transform = "translateY(0)";
+      }
+    });
   </script>
 </body>
 </html>
